@@ -8,6 +8,14 @@ namespace DataAccess.Models
 {
     public interface IProduct
     {
+        enum categories
+        {
+            Electronics,
+            Accessories,
+            HomeSupply,
+            Beauty,
+            Health
+        }
         int Id { get; set; }
         string Name { get; set; }
         string Description { get; set; }

@@ -126,9 +126,22 @@ namespace WPF_Company_Management_System
 
         private void ProductAddBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddEditWindow AddWindow = new AddEditWindow("AddCustomer");
+            AddEditWindow AddWindow = new AddEditWindow("AddProduct", _context);
             
             AddWindow.ShowDialog();
+
+            var Products = _context.Products.Select(
+                p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Category,
+                    p.Price,
+                    p.Count
+
+                }).ToList();
+            ProductsDataGrid.ItemsSource = Products;
         }
     }
 }

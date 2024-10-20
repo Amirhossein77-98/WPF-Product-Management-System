@@ -93,7 +93,7 @@
                 </StackPanel>
             </Grid>
         </DockPanel>
-        <Button Grid.Row="2" Height="50" Margin="10" FontWeight="ExtraBlack" FontSize="16" MaxWidth="100">Save</Button>
+        <Button Grid.Row="2" Height="50" Margin="10" FontWeight="ExtraBlack" FontSize="16" MaxWidth="100" Click="Button_Click">Save</Button>
         
     </Grid>
 </Window>

@@ -30,7 +30,7 @@
         </Border>
         <Border Grid.Column="1" BorderBrush="DarkGray" BorderThickness="1" Margin="1" CornerRadius="2">
             <Grid>
-                <Grid Name="HomePanel" Visibility="Collapsed" VerticalAlignment="stretch">
+                <Grid Name="HomePanel" Visibility="Visible" VerticalAlignment="stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
@@ -39,7 +39,7 @@
                     <Image Grid.Row="1" Source="Resources/Banner.png" Width="200" VerticalAlignment="Center"></Image>
                 </Grid>
                 
-                <StackPanel Name="ProductsPanel" Visibility="Visible">
+                <StackPanel Name="ProductsPanel" Visibility="Collapsed">
                     <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Products</Label>
                     <DataGrid Name="ProductsDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Stretch" Margin="20,0" SelectionChanged="ProductsDataGrid_SelectionChanged"></DataGrid>
                     <DockPanel Margin="0,20,0,0">
