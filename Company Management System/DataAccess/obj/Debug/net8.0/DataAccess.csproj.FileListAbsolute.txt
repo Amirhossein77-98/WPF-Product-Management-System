@@ -1,0 +1,15 @@
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\bin\Debug\net8.0\DataAccess.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
