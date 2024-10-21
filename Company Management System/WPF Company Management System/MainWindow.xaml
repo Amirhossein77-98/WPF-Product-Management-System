@@ -54,7 +54,7 @@
                     </DockPanel>
                 </StackPanel>
                 
-                <StackPanel Name="EmployeesPanel" Visibility="Visible" Margin="20">
+                <StackPanel Name="EmployeesPanel" Visibility="Collapsed" Margin="20">
                     <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Employees</Label>
                     <DataGrid Name="EmployeesDataGrid" AutoGenerateColumns="True" SelectionChanged="EmployeesDataGrid_SelectionChanged"></DataGrid>
                     <DockPanel Margin="0,20">
@@ -68,8 +68,19 @@
                         <Button Name="EmployeeDeleteBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="OrangeRed" Click="EmployeeDeleteBtn_Click">Delete</Button>
                     </DockPanel>
                 </StackPanel>
-                <StackPanel Name="CustomersPanel" Visibility="Collapsed">
+                <StackPanel Name="CustomersPanel" Visibility="Visible" Margin="20">
                     <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Customers</Label>
+                    <DataGrid Name="CustomersDataGrid" HorizontalAlignment="Stretch" SelectionChanged="CustomersDataGrid_SelectionChanged"></DataGrid>
+                    <DockPanel Margin="0,10,0,10">
+                        <Label Name="CustomersDetailsLabel" FontWeight="DemiBold" FontSize="13" Foreground="AliceBlue">Customer: </Label>
+                        <TextBlock Name="CustomerDetailsTextBlock" TextWrapping="Wrap" Foreground="AliceBlue" MaxWidth="300" Padding="0,8,0,0"></TextBlock>
+                        <Image Name="ProductImage" MinHeight="100" MinWidth="100" MaxWidth="180" MaxHeight="150" Margin="10,0,20,0" HorizontalAlignment="Right"></Image>
+                    </DockPanel>
+                    <DockPanel Margin="0,10,0,0" HorizontalAlignment="Center">
+                        <Button Name="AddNewCustomerBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="ForestGreen" Click="AddNewCustomerBtn_Click">Add New</Button>
+                        <Button Name="CustomerEditBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="CornflowerBlue" Click="CustomerEditBtn_Click">Edit</Button>
+                        <Button Name="CustomerDeleteBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="OrangeRed" Click="CustomerDeleteBtn_Click">Delete</Button>
+                    </DockPanel>
                 </StackPanel>
             </Grid>
         </Border>

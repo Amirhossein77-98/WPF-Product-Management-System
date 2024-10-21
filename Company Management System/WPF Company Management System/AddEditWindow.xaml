@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         
         <Label Name="WindowTitle" Grid.Row="0" Foreground="AliceBlue" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">Info Change Panel</Label>
-        <DockPanel Name="EmplyeeDetails" Grid.Row="1" Visibility="Visible">
+        <DockPanel Name="EmplyeeDetails" Grid.Row="1" Visibility="Collapsed">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -52,7 +52,7 @@
             </Grid>
         </DockPanel>
 
-        <DockPanel Name="CustomerDetails" Grid.Row="1" Visibility="Collapsed">
+        <DockPanel Name="CustomerDetails" Grid.Row="1" Visibility="Visible">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -61,18 +61,16 @@
                 <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">First Name:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Last Name:</Label>
-                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Salary:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Age:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Phone Number:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Email:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Address:</Label>
-                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Department:</Label>
+                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">BuyCount:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox Name="CustomerFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerSalaryTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerPhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
@@ -81,7 +79,7 @@
                     <DockPanel HorizontalAlignment="Left">
                         <Button Name="CustomerPhotoButton" HorizontalAlignment="Left" Click="CustomerPhotoButton_Click">
                             <Button.Content>
-                                <Image Source="./Resources/PlaceholderImage.jpg" Height="50"></Image>
+                                <Image Name="CustomerChosenImage" Source="./Resources/PlaceholderImage.jpg" Height="50"></Image>
                             </Button.Content>
                         </Button>
                         <Label Name="CustomerPhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>

@@ -64,6 +64,23 @@ namespace WPF_Company_Management_System
             return Employees;
         }
 
+        private IEnumerable<object> FetchCustomers()
+        {
+            var Customers = _context.Customers.Select(
+                c => new
+                {
+                    c.Id,
+                    c.FirstName,
+                    c.LastName,
+                    c.Email,
+                    c.Age,
+                    c.PhoneNumber,
+                    c.Address,
+                    c.BuyCount
+                }).ToList();
+            return Customers;
+        }
+
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
             HomePanel.Visibility = Visibility.Visible;
@@ -96,6 +113,7 @@ namespace WPF_Company_Management_System
             ProductsPanel.Visibility = Visibility.Collapsed;
             EmployeesPanel.Visibility = Visibility.Collapsed;
             CustomersPanel.Visibility = Visibility.Visible;
+            CustomersDataGrid.ItemsSource = FetchCustomers();
         }
 
         private void ProductsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -250,6 +268,28 @@ namespace WPF_Company_Management_System
                 bitmapImage.EndInit();
                 EmployeeImage.Source = bitmapImage;
             }
+
+        }
+
+        private void CustomersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AddNewCustomerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditWindow AddCustomerWindow = new AddEditWindow("Add_Customer", _context);
+            AddCustomerWindow.ShowDialog();
+            CustomersDataGrid.ItemsSource = FetchCustomers();
+        }
+
+        private void CustomerEditBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CustomerDeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

@@ -221,7 +221,30 @@ namespace WPF_Company_Management_System
             }
             else if (_operation == operations.AddCustomer)
             {
+                string CustomerFirstName = CustomerFirstNameTextBox.Text;
+                string CustomerLastName = CustomerLastNameTextBox.Text;
+                string CustomerAddress = CustomerAddressTextBox.Text;
+                int CustomerAge = Convert.ToInt32(CustomerAgeTextBox.Text);
+                decimal CustomerPhoneNumber = Convert.ToDecimal(CustomerPhoneNumberTextBox.Text);
+                int CustomerBuyCount = Convert.ToInt32(CustomerBuyCountTextBox.Text);
+                string CustomerEmail = CustomerEmailTextBox.Text;
+                string CustomerPicAddress = PhotoFileName == null ? "" : $".\\Resources\\CustomersImages\\{PhotoFileName}";
 
+                Customer NewCustomer = new Customer
+                {
+                    FirstName = CustomerFirstName,
+                    LastName = CustomerLastName,
+                    Age = CustomerAge,
+                    PhoneNumber = CustomerPhoneNumber,
+                    Email = CustomerEmail,
+                    Address = CustomerAddress,
+                    BuyCount = CustomerBuyCount,
+                    PicAddress = CustomerPicAddress
+                };
+
+                _passedContext.Customers.Add(NewCustomer);
+                _passedContext.SaveChanges();
+                this.Close();
             }
             else if (_operation == operations.EditProduct)
             {
@@ -341,7 +364,35 @@ namespace WPF_Company_Management_System
 
         private void CustomerPhotoButton_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string SelectedFile = openFileDialog.FileName;
+                string DestinationFolder = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\CustomersImages");
+
+                if (!Directory.Exists(DestinationFolder))
+                {
+                    Directory.CreateDirectory(DestinationFolder);
+                }
+
+                string FileName = System.IO.Path.GetFileName(SelectedFile);
+                string destinationPath = System.IO.Path.Combine(DestinationFolder, FileName);
+
+                CustomerPhotoAddressLabel.Visibility = Visibility.Visible;
+                CustomerPhotoAddressLabel.Content = SelectedFile;
+                File.Copy(SelectedFile, destinationPath, true);
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = new Uri($".\\Resources\\CustomersImages\\{FileName}", UriKind.RelativeOrAbsolute);
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+                CustomerChosenImage.Source = bitmapImage;
+                PhotoFileName = FileName;
+
+            }
         }
     }
 }
