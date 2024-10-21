@@ -12,7 +12,7 @@ namespace DataAccess.Models
         string FirstName { get; set; }
         string LastName { get; set; }
         int Age { get; set; }
-        int PhoneNumber { get; set; }
+        decimal PhoneNumber { get; set; }
         string Email { get; set; }
         string Address { get; set; }
 

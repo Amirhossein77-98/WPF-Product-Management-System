@@ -29,6 +29,7 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Email:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Address:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Department:</Label>
+                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox Name="EmployeeFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
@@ -38,7 +39,15 @@
                     <TextBox Name="EmployeePhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="EmployeeEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="EmployeeAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <ComboBox Name="EmployeeDepartmentTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
+                    <ComboBox Name="EmployeeDepartmentComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
+                    <DockPanel HorizontalAlignment="Left">
+                        <Button Name="EmployeePhotoButton" HorizontalAlignment="Left" Click="EmployeePhotoButton_Click">
+                            <Button.Content>
+                                <Image Name="EmployeeChosenImage" Source="./Resources/PlaceholderImage.jpg" Height="50"></Image>
+                            </Button.Content>
+                        </Button>
+                        <Label Name="EmployeePhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
+                    </DockPanel>
                 </StackPanel>
             </Grid>
         </DockPanel>
@@ -58,6 +67,7 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Email:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Address:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Department:</Label>
+                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox Name="CustomerFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
@@ -68,6 +78,14 @@
                     <TextBox Name="CustomerEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="CustomerBuyCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <DockPanel HorizontalAlignment="Left">
+                        <Button Name="CustomerPhotoButton" HorizontalAlignment="Left" Click="CustomerPhotoButton_Click">
+                            <Button.Content>
+                                <Image Source="./Resources/PlaceholderImage.jpg" Height="50"></Image>
+                            </Button.Content>
+                        </Button>
+                        <Label Name="CustomerPhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
+                    </DockPanel>
                 </StackPanel>
             </Grid>
         </DockPanel>
@@ -83,6 +101,7 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Category:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Count:</Label>
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Price:</Label>
+                    <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox Name="ProductNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
@@ -90,6 +109,14 @@
                     <ComboBox Name="ProductCategoryComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
                     <TextBox Name="ProductCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox Name="ProductPriceTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <DockPanel HorizontalAlignment="Left">
+                        <Button Name="ProductPhotoButton" HorizontalAlignment="Left" Click="ProductPhotoButton_Click">
+                            <Button.Content>
+                                <Image Name="ProductChosenPhoto" Source="./Resources/PlaceholderImage.jpg" Height="50"></Image>
+                            </Button.Content>
+                        </Button>
+                        <Label Name="ProductPhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
+                    </DockPanel>
                 </StackPanel>
             </Grid>
         </DockPanel>

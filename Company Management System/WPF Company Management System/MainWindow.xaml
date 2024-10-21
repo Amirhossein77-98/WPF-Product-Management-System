@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Company_Management_System"
         mc:Ignorable="d"
-        Title="Management System" MinHeight="450" MinWidth="800" Height="450" Width="800" Background="#021526">
+        Title="Management System" MinHeight="450" MinWidth="800" Height="550" Width="900" Background="#021526">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="200"></ColumnDefinition>
@@ -30,7 +30,7 @@
         </Border>
         <Border Grid.Column="1" BorderBrush="DarkGray" BorderThickness="1" Margin="1" CornerRadius="2">
             <Grid>
-                <Grid Name="HomePanel" Visibility="Visible" VerticalAlignment="stretch">
+                <Grid Name="HomePanel" Visibility="Collapsed" VerticalAlignment="stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
@@ -40,22 +40,33 @@
                 </Grid>
                 
                 <StackPanel Name="ProductsPanel" Visibility="Collapsed">
-                    <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Products</Label>
+                    <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,30">Products</Label>
                     <DataGrid Name="ProductsDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Stretch" Margin="20,0" SelectionChanged="ProductsDataGrid_SelectionChanged"></DataGrid>
                     <DockPanel Margin="0,20,0,0">
                         <Label Name="ProductsRepresentation" FontWeight="DemiBold" FontSize="13" Foreground="AliceBlue" Margin="20,0">Product: </Label>
-                        <Label Name="ProductsDetails" Foreground="AliceBlue"></Label>
-                        <Image Name="ProductsImage" Width="195" Margin="10,0"></Image>
+                        <TextBlock Name="ProductsDetails" TextWrapping="Wrap" Foreground="AliceBlue" MaxWidth="300" Padding="0,8,0,0"></TextBlock>
+                        <Image Name="ProductsImage" MinHeight="100" MinWidth="100" MaxWidth="180" MaxHeight="150" Margin="10,0,20,0" HorizontalAlignment="Right"></Image>
                     </DockPanel>
                     <DockPanel MaxWidth="300" HorizontalAlignment="Center" Margin="0,10,0,0">
                         <Button Name="ProductAddBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="ForestGreen" Click="ProductAddBtn_Click">Add New</Button>
-                        <Button Name="ProductEditBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="CornflowerBlue">Edit</Button>
-                        <Button Name="ProductDeleteBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="OrangeRed">Delete</Button>
+                        <Button Name="ProductEditBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="CornflowerBlue" Click="ProductEditBtn_Click">Edit</Button>
+                        <Button Name="ProductDeleteBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="OrangeRed" Click="ProductDeleteBtn_Click">Delete</Button>
                     </DockPanel>
                 </StackPanel>
                 
-                <StackPanel Name="EmployeesPanel" Visibility="Collapsed">
+                <StackPanel Name="EmployeesPanel" Visibility="Visible" Margin="20">
                     <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Employees</Label>
+                    <DataGrid Name="EmployeesDataGrid" AutoGenerateColumns="True" SelectionChanged="EmployeesDataGrid_SelectionChanged"></DataGrid>
+                    <DockPanel Margin="0,20">
+                        <Label Name="EmployeeDetailsLabel" FontWeight="DemiBold" FontSize="13" Foreground="AliceBlue">Employee: </Label>
+                        <TextBlock Name="EmployeeDetailsTextBlock" TextWrapping="Wrap" Foreground="AliceBlue" MaxWidth="300" Padding="0,8,0,0"></TextBlock>
+                        <Image Name="EmployeeImage" MinHeight="100" MinWidth="100" MaxWidth="180" MaxHeight="150" Margin="10,0,20,0" HorizontalAlignment="Right"></Image>
+                    </DockPanel>
+                    <DockPanel MaxWidth="300" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Button Name="EmployeeAddBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="ForestGreen" Click="EmployeeAddBtn_Click">Add New</Button>
+                        <Button Name="EmployeeEditBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="CornflowerBlue" Click="EmployeeEditBtn_Click">Edit</Button>
+                        <Button Name="EmployeeDeleteBtn" Width="90" Margin="5" Height="35" FontWeight="Bold" Background="OrangeRed" Click="EmployeeDeleteBtn_Click">Delete</Button>
+                    </DockPanel>
                 </StackPanel>
                 <StackPanel Name="CustomersPanel" Visibility="Collapsed">
                     <Label Foreground="White" FontFamily="Times New Roman" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,50">Customers</Label>

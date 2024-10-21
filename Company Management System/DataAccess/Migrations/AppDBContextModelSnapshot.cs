@@ -51,8 +51,8 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<decimal>("PhoneNumber")
+                        .HasColumnType("decimal(11, 0)");
 
                     b.Property<string>("PicAddress")
                         .IsRequired()
@@ -93,8 +93,8 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<decimal>("PhoneNumber")
+                        .HasColumnType("decimal(11, 0)");
 
                     b.Property<string>("PicAddress")
                         .IsRequired()
