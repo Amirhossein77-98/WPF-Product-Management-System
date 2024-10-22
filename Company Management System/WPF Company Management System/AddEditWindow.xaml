@@ -32,14 +32,14 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBox Name="EmployeeFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeeLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeeSalaryTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeeAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeePhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeeEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="EmployeeAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <ComboBox Name="EmployeeDepartmentComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeSalaryTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeePhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <ComboBox VerticalContentAlignment="Center" Name="EmployeeDepartmentComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
                     <DockPanel HorizontalAlignment="Left">
                         <Button Name="EmployeePhotoButton" HorizontalAlignment="Left" Click="EmployeePhotoButton_Click">
                             <Button.Content>
@@ -70,12 +70,12 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBox Name="CustomerFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerPhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="CustomerBuyCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerPhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerBuyCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <DockPanel HorizontalAlignment="Left">
                         <Button Name="CustomerPhotoButton" HorizontalAlignment="Left" Click="CustomerPhotoButton_Click">
                             <Button.Content>
@@ -102,11 +102,11 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBox Name="ProductNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="ProductDescriptionTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <ComboBox Name="ProductCategoryComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
-                    <TextBox Name="ProductCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox Name="ProductPriceTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductDescriptionTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <ComboBox VerticalContentAlignment="Center" Name="ProductCategoryComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductPriceTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <DockPanel HorizontalAlignment="Left">
                         <Button Name="ProductPhotoButton" HorizontalAlignment="Left" Click="ProductPhotoButton_Click">
                             <Button.Content>

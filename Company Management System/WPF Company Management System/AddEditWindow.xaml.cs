@@ -162,6 +162,22 @@ namespace WPF_Company_Management_System
                 EmplyeeDetails.Visibility = Visibility.Collapsed;
                 CustomerDetails.Visibility = Visibility.Visible;
                 _operation = operations.EditCustomer;
+                CustomerFirstNameTextBox.Text = CurrentCustomer.FirstName;
+                CustomerLastNameTextBox.Text = CurrentCustomer.LastName;
+                CustomerAddressTextBox.Text = CurrentCustomer.Address;
+                CustomerAgeTextBox.Text = CurrentCustomer.Age.ToString();
+                CustomerEmailTextBox.Text = CurrentCustomer.Email;
+                CustomerPhoneNumberTextBox.Text = CurrentCustomer.PhoneNumber.ToString();
+                CustomerBuyCountTextBox.Text = CurrentCustomer.BuyCount.ToString();
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = new Uri($"{CurrentCustomer.PicAddress}", UriKind.RelativeOrAbsolute);
+                bitmapImage.CacheOption= BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+                EmployeeChosenImage.Source = bitmapImage;
+                EmployeePhotoAddressLabel.Visibility = Visibility.Visible;
+                EmployeePhotoAddressLabel.Content = CurrentCustomer.PicAddress;
             }
         }
 
@@ -274,7 +290,7 @@ namespace WPF_Company_Management_System
                 int EmployeeAge = Convert.ToInt32(EmployeeAgeTextBox.Text);
                 string EmployeeEmail = EmployeeEmailTextBox.Text;
                 decimal EmployeePhoneNumber = Convert.ToDecimal(EmployeePhoneNumberTextBox.Text);
-                double EmployeeSalary = Convert.ToInt32(EmployeeSalaryTextBox.Text);
+                double EmployeeSalary = Convert.ToDouble(EmployeeSalaryTextBox.Text);
                 Department EmployeeDepartmentValue;
                 Enum.TryParse(EmployeeDepartmentComboBox.Text, out EmployeeDepartmentValue);
                 Department EmployeeDepartment = EmployeeDepartmentValue;
@@ -295,6 +311,28 @@ namespace WPF_Company_Management_System
             }
             else if (_operation == operations.EditCustomer)
             {
+                string CustomerFirstName = CustomerFirstNameTextBox.Text;
+                string CustomerLastName = CustomerLastNameTextBox.Text;
+                string CustomerAddress = CustomerAddressTextBox.Text;
+                int CustomerAge = Convert.ToInt32(CustomerAgeTextBox.Text);
+                decimal CustomerPhoneNumber = Convert.ToDecimal(CustomerPhoneNumberTextBox.Text);
+                int CustomerBuyCount = Convert.ToInt32(CustomerBuyCountTextBox.Text);
+                string CustomerEmail = CustomerEmailTextBox.Text;
+                string CustomerPicAddress = PhotoFileName == null ? "" : $".\\Resources\\CustomersImages\\{PhotoFileName}";
+
+                Customer customer = _passedContext.Customers.Where(c => c.Id == CurrentCustomer.Id).FirstOrDefault();
+                customer.FirstName = CustomerFirstName;
+                customer.LastName = CustomerLastName;
+                customer.Address = CustomerAddress;
+                customer.Email = CustomerEmail;
+                customer.PhoneNumber = CustomerPhoneNumber;
+                customer.BuyCount = CustomerBuyCount;
+                customer.Age = CustomerAge;
+                customer.PicAddress = PhotoFileName == null ? customer.PicAddress : $".\\Resources\\CustomersImages\\{PhotoFileName}";
+
+                _passedContext.SaveChanges();
+                this.Close();
+
 
             }
         }

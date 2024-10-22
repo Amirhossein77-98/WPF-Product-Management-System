@@ -141,6 +141,7 @@ namespace WPF_Company_Management_System
                     bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.EndInit();
                     ProductsImage.Source = bitmap;
+                    ProductsImage.Visibility = Visibility.Visible;
                 
             } else {
                 ProductsDetails.Text = "Nothing Found!";
@@ -267,13 +268,35 @@ namespace WPF_Company_Management_System
                 bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
                 bitmapImage.EndInit();
                 EmployeeImage.Source = bitmapImage;
+                ProductsImage.Visibility = Visibility.Visible;
             }
 
         }
 
         private void CustomersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var SelectedRow = CustomersDataGrid.SelectedItem;
+            if (SelectedRow != null) {
+                int CustomerId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
+                Customer customer = _context.Customers.FirstOrDefault(customer => customer.Id == CustomerId);
 
+                string CustomerDetails = $"{customer.FirstName} {customer.LastName}" +
+                    $"\nAge: {customer.Age}" +
+                    $"\nBuy Count: {customer.BuyCount}" +
+                    $"\nPhone Number: {customer.BuyCount}" +
+                    $"\nEmail: {customer.Email}" +
+                    $"\nAddress: {customer.Address}";
+
+                CustomerDetailsTextBlock.Text = CustomerDetails;
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = new Uri(customer.PicAddress == "" ? ".\\Resources\\ProductsImages\\ProductNone.jpg" : customer.PicAddress, UriKind.RelativeOrAbsolute);
+                bitmapImage.CacheOption= BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+                CustomerImage.Source = bitmapImage;
+                ProductsImage.Visibility = Visibility.Visible;
+            }
         }
 
         private void AddNewCustomerBtn_Click(object sender, RoutedEventArgs e)
@@ -285,12 +308,45 @@ namespace WPF_Company_Management_System
 
         private void CustomerEditBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var SelectedItem = CustomersDataGrid.SelectedItem;
+            if (SelectedItem == null)
+            {
+                MessageBox.Show("Please choose a customer first!");
+            }
+            else
+            {
+                int CustomerId = (int)SelectedItem.GetType().GetProperty("Id").GetValue(SelectedItem, null);
+                Customer customer = _context.Customers.FirstOrDefault(c => c.Id == CustomerId);
+                AddEditWindow EditCustomerWindow = new AddEditWindow("Edit_Customer", _context, customer: customer);
+                EditCustomerWindow.ShowDialog();
+                CustomersDataGrid.ItemsSource = FetchCustomers();
+            }
         }
 
         private void CustomerDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            var SelectedItem = CustomersDataGrid.SelectedItem;
+            
+            if (SelectedItem == null) {
+                MessageBox.Show("Please choose a customer first!");
+            }
+            else
+            {
+                int CustomerId = (int)SelectedItem.GetType().GetProperty("Id").GetValue(SelectedItem, null);
+                Customer customer = _context.Customers.FirstOrDefault(c => c.Id == CustomerId);
+                MessageBoxResult result = MessageBox.Show($"Are you sure you want to delete {customer.FirstName} {customer.LastName}?", "Are you Sure?", MessageBoxButton.YesNoCancel);
 
+                if (result == MessageBoxResult.Yes) { 
+                    _context.Customers.Remove(customer);
+                    _context.SaveChanges();
+                    CustomersDataGrid.ItemsSource = FetchCustomers();
+                    CustomerDetailsTextBlock.Text = "";
+                    CustomerImage.Visibility = Visibility.Hidden;
+                } else
+                {
+                    MessageBox.Show("I'm sure you made the best choice :)");
+                }
+            }
         }
     }
 }

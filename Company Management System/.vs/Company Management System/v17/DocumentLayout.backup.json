@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "WPF Company Management System\\AddEditWindow.xaml.cs",
               "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\AddEditWindow.xaml.cs",
               "RelativeToolTip": "WPF Company Management System\\AddEditWindow.xaml.cs",
-              "ViewState": "AgIAAGcBAAAAAAAAAAAAAIYBAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABQBAAAAAAAAAAAQwCQBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T13:15:08.007Z",
               "EditorCaption": ""
@@ -91,15 +91,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WPF Company Management System\\MainWindow.xaml.cs",
               "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\MainWindow.xaml.cs",
               "RelativeToolTip": "WPF Company Management System\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAABAAAAAAAAAAAuwBoBAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAqwB0BAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T06:32:51.862Z"
+              "WhenOpened": "2024-10-20T06:32:51.862Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -139,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Customer.cs",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "DataAccess\\Models\\Customer.cs",
