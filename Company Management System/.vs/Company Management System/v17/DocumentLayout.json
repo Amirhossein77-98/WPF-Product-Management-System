@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\wpf company management system\\addeditwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\addeditwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,28 +15,8 @@
       "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\iproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\iproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\dataaccess\\models\\iperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1728770B-FA47-44DA-8808-C484CAF8026E}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\iperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|g:\\codes\\c#\\wpf company management system\\company management system\\wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9CEDDF7-ADBA-4DAD-820E-61ADED2C179C}|WPF Company Management System\\WPF Company Management System.csproj|solutionrelative:wpf company management system\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AddEditWindow.xaml",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\AddEditWindow.xaml",
               "RelativeDocumentMoniker": "WPF Company Management System\\AddEditWindow.xaml",
@@ -66,20 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AddEditWindow.xaml.cs",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\AddEditWindow.xaml.cs",
               "RelativeDocumentMoniker": "WPF Company Management System\\AddEditWindow.xaml.cs",
               "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\AddEditWindow.xaml.cs",
               "RelativeToolTip": "WPF Company Management System\\AddEditWindow.xaml.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAACQBAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T13:15:08.007Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\MainWindow.xaml",
               "RelativeDocumentMoniker": "WPF Company Management System\\MainWindow.xaml",
@@ -91,88 +67,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WPF Company Management System\\MainWindow.xaml.cs",
               "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\WPF Company Management System\\MainWindow.xaml.cs",
               "RelativeToolTip": "WPF Company Management System\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAAwCUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T06:32:51.862Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IProduct.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\IProduct.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Models\\IProduct.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\IProduct.cs",
-              "RelativeToolTip": "DataAccess\\Models\\IProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:11:14.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Product.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Models\\Product.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Product.cs",
-              "RelativeToolTip": "DataAccess\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:12:45.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Models\\Employee.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Employee.cs",
-              "RelativeToolTip": "DataAccess\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:13:07.947Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Models\\Customer.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\Customer.cs",
-              "RelativeToolTip": "DataAccess\\Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:13:23.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "DataAccess\\AppDBContext.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\AppDBContext.cs",
-              "RelativeToolTip": "DataAccess\\AppDBContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T19:02:10.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IPerson.cs",
-              "DocumentMoniker": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\IPerson.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Models\\IPerson.cs",
-              "ToolTip": "G:\\Codes\\C#\\WPF Company Management System\\Company Management System\\DataAccess\\Models\\IPerson.cs",
-              "RelativeToolTip": "DataAccess\\Models\\IPerson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T16:10:51.645Z"
             }
           ]
         }

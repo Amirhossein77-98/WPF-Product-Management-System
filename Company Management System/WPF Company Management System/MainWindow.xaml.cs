@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DataAccess;
 using DataAccess.Models;
-
+using WPF_Company_Management_System.Models;
 
 namespace WPF_Company_Management_System
 {
@@ -30,57 +31,7 @@ namespace WPF_Company_Management_System
             _context = new AppDBContext();
         }
 
-        private IEnumerable<object> FetchProducts()
-        {
-            var Products = _context.Products.Select(
-                p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.Description,
-                    p.Category,
-                    p.Price,
-                    p.Count
-
-                }).ToList();
-            return Products;
-        }
-
-        private IEnumerable<object> FetchEmployees()
-        {
-            var Employees = _context.Employees.Select(
-                e => new
-                {
-                    e.Id,
-                    e.FirstName,
-                    e.LastName,
-                    e.Email,
-                    e.Age,
-                    e.PhoneNumber,
-                    e.Address,
-                    e.Department,
-                    e.Salary
-                }).ToList();
-            return Employees;
-        }
-
-        private IEnumerable<object> FetchCustomers()
-        {
-            var Customers = _context.Customers.Select(
-                c => new
-                {
-                    c.Id,
-                    c.FirstName,
-                    c.LastName,
-                    c.Email,
-                    c.Age,
-                    c.PhoneNumber,
-                    c.Address,
-                    c.BuyCount
-                }).ToList();
-            return Customers;
-        }
-
+        // Home Section Logic
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
             HomePanel.Visibility = Visibility.Visible;
@@ -89,61 +40,30 @@ namespace WPF_Company_Management_System
             CustomersPanel.Visibility = Visibility.Collapsed;
         }
 
+        // Product Section Logic
         private void ProductsBtn_Click(object sender, RoutedEventArgs e)
         {
             HomePanel.Visibility = Visibility.Collapsed;
             ProductsPanel.Visibility = Visibility.Visible;
             EmployeesPanel.Visibility = Visibility.Collapsed;
             CustomersPanel.Visibility = Visibility.Collapsed;
-            ProductsDataGrid.ItemsSource = FetchProducts();
-        }
-
-        private void EmployeesBtn_Click(object sender, RoutedEventArgs e)
-        {
-            HomePanel.Visibility = Visibility.Collapsed;
-            ProductsPanel.Visibility = Visibility.Collapsed;
-            EmployeesPanel.Visibility = Visibility.Visible;
-            CustomersPanel.Visibility = Visibility.Collapsed;
-            EmployeesDataGrid.ItemsSource = FetchEmployees();
-        }
-
-        private void CustomersBtn_Click(object sender, RoutedEventArgs e)
-        {
-            HomePanel.Visibility = Visibility.Collapsed;
-            ProductsPanel.Visibility = Visibility.Collapsed;
-            EmployeesPanel.Visibility = Visibility.Collapsed;
-            CustomersPanel.Visibility = Visibility.Visible;
-            CustomersDataGrid.ItemsSource = FetchCustomers();
+            ProductsDataGrid.ItemsSource = FetchData.FetchProducts(_context);
         }
 
         private void ProductsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var SelectedRow = ProductsDataGrid.SelectedItem;
-            //int ProductId = SelectedRow != null ? SelectedRow.Id : 0;
-
             
             if (SelectedRow != null) 
             {
                 int ProductId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
                 Product? product = _context.Products.FirstOrDefault(p => p.Id == ProductId);
 
-                string ProductInfo = $"{product.Name}" +
-                    $"\nDescription: {product.Description}" +
-                    $"\nRemaining: {product.Count}" +
-                    $"\nPrice: {product.Price}" +
-                    $"\nCategory: {product.Category}";
-                ProductsDetails.Text = ProductInfo;
-
-                
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(product.PicAddress == "" ? "./Resources/ProductsImages/ProductNone.jpg" : product.PicAddress, UriKind.RelativeOrAbsolute);
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmap.EndInit();
-                    ProductsImage.Source = bitmap;
-                    ProductsImage.Visibility = Visibility.Visible;
-                
-            } else {
+                ProductsDetails.Text = Product.GetProductDetailString(product.Name, product.Description, product.Category, product.Count, product.Price);
+                ProductsImage.Visibility = Visibility.Visible;
+                ProductsImage.Source = FetchData.FetchImage(product.PicAddress, "Product");
+            }
+            else {
                 ProductsDetails.Text = "Nothing Found!";
                 ProductsImage.Source = null;
             }
@@ -153,88 +73,139 @@ namespace WPF_Company_Management_System
         {
             AddEditWindow AddWindow = new AddEditWindow(panel: "Add_Product", _context: _context);
             AddWindow.ShowDialog();
-            ProductsDataGrid.ItemsSource = FetchProducts();
+            ProductsDataGrid.ItemsSource = FetchData.FetchProducts(_context);
         }
 
         private void ProductEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductsDataGrid.SelectedItem == null)
+            var SelectedRow = ProductsDataGrid.SelectedItem;
+            if (SelectedRow == null)
             {
                 MessageBox.Show("Please choose a product!");
             } else
             {
-                int ProductId = (int)ProductsDataGrid.SelectedItem.GetType().GetProperty("Id").GetValue(ProductsDataGrid.SelectedItem, null);
+                int ProductId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
                 Product product = _context.Products.FirstOrDefault(p => p.Id == ProductId);
                 AddEditWindow EditWindow = new AddEditWindow(panel: "Edit_Product", _context: _context, product: product);
                 EditWindow.ShowDialog();
-                ProductsDataGrid.ItemsSource = FetchProducts();
+                ProductsDataGrid.ItemsSource = FetchData.FetchProducts(_context);
             }
         }
 
         private void ProductDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductsDataGrid.SelectedItem == null)
+            var SelectedRow = ProductsDataGrid.SelectedItem;
+
+            if (SelectedRow != null)
             {
-                MessageBox.Show("Please choose a product!");
-            }
-            else
-            {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this product?", "Delete Product?", MessageBoxButton.YesNoCancel);
-                if (result == MessageBoxResult.Yes) {
-                    int ProductId = (int)ProductsDataGrid.SelectedItem.GetType().GetProperty("Id").GetValue(ProductsDataGrid.SelectedItem, null);
-                    Product product = _context.Products.FirstOrDefault(p => p.Id == ProductId);
+                int ProductId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
+                Product product = _context.Products.FirstOrDefault(p => p.Id == ProductId);
+                
+                MessageBoxResult result = MessageBox.Show($"Are you sure you want to delete this {product.Name}?", "Delete Product?", MessageBoxButton.YesNoCancel);
+                
+                if (result == MessageBoxResult.Yes)
+                {
                     _context.Products.Remove(product);
                     _context.SaveChanges();
-                    ProductsDataGrid.ItemsSource = FetchProducts();
+                    ProductsDataGrid.ItemsSource = FetchData.FetchProducts(_context);
                     ProductsDetails.Text = "";
                     ProductsImage.Visibility = Visibility.Hidden;
                 }
+                else
+                {
+                    MessageBox.Show("I'm sure you made the best choice :)");
+                }
             }
+            else
+            {
+                MessageBox.Show("Please choose a product!");
+            }
+        }
+
+
+        // Employee Section Logic
+        private void EmployeesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            HomePanel.Visibility = Visibility.Collapsed;
+            ProductsPanel.Visibility = Visibility.Collapsed;
+            EmployeesPanel.Visibility = Visibility.Visible;
+            CustomersPanel.Visibility = Visibility.Collapsed;
+            EmployeesDataGrid.ItemsSource = FetchData.FetchEmployees(_context);
+        }
+
+        private void EmployeesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var SelectedRow = EmployeesDataGrid.SelectedItem;
+
+            if (SelectedRow != null)
+            {
+                int EmployeeId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
+                Employee employee = _context.Employees.FirstOrDefault(emp => emp.Id == EmployeeId);
+
+                EmployeeDetailsTextBlock.Text = Employee.GetEmployeeDetailString
+                    (employee.FirstName, 
+                    employee.LastName,
+                    employee.Age,
+                    employee.Email,
+                    employee.PhoneNumber,
+                    employee.Address,
+                    employee.Department.ToString(), 
+                    employee.Salary.ToString());
+                ProductsImage.Visibility = Visibility.Visible;
+                EmployeeImage.Source = FetchData.FetchImage(employee.PicAddress, "Employee");
+            }
+            else
+            {
+                ProductsDetails.Text = "Nothing Found!";
+                ProductsImage.Source = null;
+            }
+
         }
 
         private void EmployeeAddBtn_Click(object sender, RoutedEventArgs e)
         {
             AddEditWindow AddEmployeeWindow = new AddEditWindow(panel: "Add_Employee", _context: _context);
             AddEmployeeWindow.ShowDialog();
-            EmployeesDataGrid.ItemsSource = FetchEmployees();
+            EmployeesDataGrid.ItemsSource = FetchData.FetchEmployees(_context);
         }
 
         private void EmployeeEditBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (EmployeesDataGrid.SelectedItem == null)
+            var SelectdRow = EmployeesDataGrid.SelectedItem;
+            if (SelectdRow == null)
             {
-                MessageBox.Show("Please choose one employee to proceed!");
+                MessageBox.Show("Please choose an employee first!");
             } else
             {
-                var SelectedRow = EmployeesDataGrid.SelectedItem;
-                int EmployeeId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
+                int EmployeeId = (int)SelectdRow.GetType().GetProperty("Id").GetValue(SelectdRow, null);
                 Employee employee = _context.Employees.FirstOrDefault(e => e.Id == EmployeeId);
-
                 AddEditWindow EditEmployeeWindow = new AddEditWindow(panel: "Edit_Employee", _context: _context, employee: employee);
                 EditEmployeeWindow.ShowDialog();
-                EmployeesDataGrid.ItemsSource = FetchEmployees();
+                EmployeesDataGrid.ItemsSource = FetchData.FetchEmployees(_context);
             }
         }
 
         private void EmployeeDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             var SelectedRow = EmployeesDataGrid.SelectedItem;
+            
             if (SelectedRow != null)
             {
                 int EmployeeId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
-                string EmployeeFirstName = (string)SelectedRow.GetType().GetProperty("FirstName").GetValue(SelectedRow, null);
-                string EmployeeLastName = (string)SelectedRow.GetType().GetProperty("LastName").GetValue(SelectedRow, null);
-                MessageBoxResult result = MessageBox.Show($"Are you sure you want to delete {EmployeeFirstName} {EmployeeLastName}?", "Delete Employee?" ,MessageBoxButton.YesNoCancel);
+                Employee employee = _context.Employees.FirstOrDefault(emp => emp.Id == EmployeeId);
+                
+                MessageBoxResult result = MessageBox.Show($"Are you sure you want to delete {employee.FirstName} {employee.LastName}?", "Delete Employee?", MessageBoxButton.YesNoCancel);
+                
                 if (result == MessageBoxResult.Yes)
                 {
-                    Employee employee = _context.Employees.FirstOrDefault(e => e.Id == EmployeeId);
                     _context.Employees.Remove(employee);
                     _context.SaveChanges();
-                    EmployeesDataGrid.ItemsSource = FetchEmployees();
+                    EmployeesDataGrid.ItemsSource = FetchData.FetchEmployees(_context);
                     EmployeeDetailsTextBlock.Text = "";
                     EmployeeImage.Visibility = Visibility.Hidden;
                 }
-                else if (result == MessageBoxResult.No) {
+                else 
+                {
                     MessageBox.Show("I think you made a better choice :)");
                 }
             } else
@@ -244,33 +215,14 @@ namespace WPF_Company_Management_System
 
         }
 
-        private void EmployeesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        // Customer Section Logic
+        private void CustomersBtn_Click(object sender, RoutedEventArgs e)
         {
-            var SelectedRow = EmployeesDataGrid.SelectedItem;
-
-            if (SelectedRow != null) {
-                int EmployeeId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
-                Employee employee = _context.Employees.FirstOrDefault(emp => emp.Id == EmployeeId);
-
-                string EmployeeDetails = $"{employee.FirstName} {employee.LastName}" +
-                    $"\nAge: {employee.Age}" +
-                    $"\nEmail: {employee.Email}" +
-                    $"\nPhone Number: {employee.PhoneNumber}" +
-                    $"\nAddress: {employee.Address}" +
-                    $"\nDepartment: {employee.Department}" +
-                    $"\nSalary: ${employee.Salary}";
-
-                EmployeeDetailsTextBlock.Text = EmployeeDetails;
-
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.UriSource = new Uri(employee.PicAddress == "" ? ".\\Resources\\ProductsImages\\ProductNone.jpg" : employee.PicAddress, UriKind.RelativeOrAbsolute);
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.EndInit();
-                EmployeeImage.Source = bitmapImage;
-                ProductsImage.Visibility = Visibility.Visible;
-            }
-
+            HomePanel.Visibility = Visibility.Collapsed;
+            ProductsPanel.Visibility = Visibility.Collapsed;
+            EmployeesPanel.Visibility = Visibility.Collapsed;
+            CustomersPanel.Visibility = Visibility.Visible;
+            CustomersDataGrid.ItemsSource = FetchData.FetchCustomers(_context);
         }
 
         private void CustomersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -280,22 +232,14 @@ namespace WPF_Company_Management_System
                 int CustomerId = (int)SelectedRow.GetType().GetProperty("Id").GetValue(SelectedRow, null);
                 Customer customer = _context.Customers.FirstOrDefault(customer => customer.Id == CustomerId);
 
-                string CustomerDetails = $"{customer.FirstName} {customer.LastName}" +
-                    $"\nAge: {customer.Age}" +
-                    $"\nBuy Count: {customer.BuyCount}" +
-                    $"\nPhone Number: {customer.BuyCount}" +
-                    $"\nEmail: {customer.Email}" +
-                    $"\nAddress: {customer.Address}";
-
-                CustomerDetailsTextBlock.Text = CustomerDetails;
-
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.UriSource = new Uri(customer.PicAddress == "" ? ".\\Resources\\ProductsImages\\ProductNone.jpg" : customer.PicAddress, UriKind.RelativeOrAbsolute);
-                bitmapImage.CacheOption= BitmapCacheOption.OnLoad;
-                bitmapImage.EndInit();
-                CustomerImage.Source = bitmapImage;
+                CustomerDetailsTextBlock.Text = Customer.GetEmployeeDetailString(customer.FirstName,customer.LastName,customer.Age,customer.BuyCount,customer.Email,customer.PhoneNumber,customer.Address);
                 ProductsImage.Visibility = Visibility.Visible;
+                CustomerImage.Source = FetchData.FetchImage(customer.PicAddress, "Customer");
+            }
+            else
+            {
+                ProductsDetails.Text = "Nothing Found!";
+                ProductsImage.Source = null;
             }
         }
 
@@ -303,7 +247,7 @@ namespace WPF_Company_Management_System
         {
             AddEditWindow AddCustomerWindow = new AddEditWindow("Add_Customer", _context);
             AddCustomerWindow.ShowDialog();
-            CustomersDataGrid.ItemsSource = FetchCustomers();
+            CustomersDataGrid.ItemsSource = FetchData.FetchCustomers(_context);
         }
 
         private void CustomerEditBtn_Click(object sender, RoutedEventArgs e)
@@ -319,7 +263,7 @@ namespace WPF_Company_Management_System
                 Customer customer = _context.Customers.FirstOrDefault(c => c.Id == CustomerId);
                 AddEditWindow EditCustomerWindow = new AddEditWindow("Edit_Customer", _context, customer: customer);
                 EditCustomerWindow.ShowDialog();
-                CustomersDataGrid.ItemsSource = FetchCustomers();
+                CustomersDataGrid.ItemsSource = FetchData.FetchCustomers(_context);
             }
         }
 
@@ -327,25 +271,26 @@ namespace WPF_Company_Management_System
         {
             var SelectedItem = CustomersDataGrid.SelectedItem;
             
-            if (SelectedItem == null) {
-                MessageBox.Show("Please choose a customer first!");
-            }
-            else
-            {
+            if (SelectedItem != null) {
                 int CustomerId = (int)SelectedItem.GetType().GetProperty("Id").GetValue(SelectedItem, null);
                 Customer customer = _context.Customers.FirstOrDefault(c => c.Id == CustomerId);
+                
                 MessageBoxResult result = MessageBox.Show($"Are you sure you want to delete {customer.FirstName} {customer.LastName}?", "Are you Sure?", MessageBoxButton.YesNoCancel);
 
                 if (result == MessageBoxResult.Yes) { 
                     _context.Customers.Remove(customer);
                     _context.SaveChanges();
-                    CustomersDataGrid.ItemsSource = FetchCustomers();
+                    CustomersDataGrid.ItemsSource = FetchData.FetchCustomers(_context);
                     CustomerDetailsTextBlock.Text = "";
                     CustomerImage.Visibility = Visibility.Hidden;
                 } else
                 {
                     MessageBox.Show("I'm sure you made the best choice :)");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please choose a customer first!");
             }
         }
     }

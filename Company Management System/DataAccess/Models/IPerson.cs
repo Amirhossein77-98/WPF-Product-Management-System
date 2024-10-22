@@ -15,8 +15,5 @@ namespace DataAccess.Models
         decimal PhoneNumber { get; set; }
         string Email { get; set; }
         string Address { get; set; }
-
-        string GetInfo();
-        string Picture();
     }
 }

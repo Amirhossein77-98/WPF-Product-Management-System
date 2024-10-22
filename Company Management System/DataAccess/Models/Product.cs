@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccess.Models
+﻿namespace DataAccess.Models
 {
     public class Product : IProduct
     {
@@ -15,19 +9,16 @@ namespace DataAccess.Models
         public int Count { get; set; }
         public string PicAddress { get; set; }
         public double Price { get; set; }
-
-        public string GetProductInfo()
+        
+        public static string GetProductDetailString(string Name, string Description, string Category, int Count, double Price)
         {
             string ProductInfo = $"{Name}" +
-                $"\nCategory: {Category}" +
-                $"\nRemaining: {Count}" +
-                $"\nPrice: {Price}";
+                        $"\nDescription: {Description}" +
+                        $"\nRemaining: {Count}" +
+                        $"\nPrice: {Price}" +
+                        $"\nCategory: {Category}";
             return ProductInfo;
         }
-
-        public string Picture()
-        {
-            return PicAddress;
-        }
     }
+
 }

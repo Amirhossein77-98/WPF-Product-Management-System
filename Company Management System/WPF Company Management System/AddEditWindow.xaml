@@ -14,11 +14,12 @@
         </Grid.RowDefinitions>
         
         <Label Name="WindowTitle" Grid.Row="0" Foreground="AliceBlue" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">Info Change Panel</Label>
-        <DockPanel Name="EmplyeeDetails" Grid.Row="1" Visibility="Collapsed">
+        <DockPanel Name="EmplyeeDetails" Grid.Row="1" Visibility="Visible">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">First Name:</Label>
@@ -34,10 +35,10 @@
                 <StackPanel Grid.Column="1">
                     <TextBox VerticalContentAlignment="Center" Name="EmployeeFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="EmployeeLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="EmployeeSalaryTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeSalaryTextBox" TextChanged="SalaryTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="EmployeeAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="EmployeePhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="EmployeeEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeePhoneNumberTextBox" TextChanged="PhoneNumberTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="EmployeeEmailTextBox" TextChanged="EmailTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="EmployeeAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <ComboBox VerticalContentAlignment="Center" Name="EmployeeDepartmentComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
                     <DockPanel HorizontalAlignment="Left">
@@ -49,14 +50,26 @@
                         <Label Name="EmployeePhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
                     </DockPanel>
                 </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="SalaryValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="PhoneNumberValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="EmployeeEmailValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                </StackPanel>
             </Grid>
         </DockPanel>
 
-        <DockPanel Name="CustomerDetails" Grid.Row="1" Visibility="Visible">
+        <DockPanel Name="CustomerDetails" Grid.Row="1" Visibility="Collapsed">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">First Name:</Label>
@@ -69,11 +82,11 @@
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">Choose Photo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBox Name="CustomerFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerFirstNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="CustomerLastNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="CustomerAgeTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="CustomerPhoneNumberTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="CustomerEmailTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerPhoneNumberTextBox" TextChanged="PhoneNumberTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="CustomerEmailTextBox" TextChanged="EmailTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="CustomerAddressTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="CustomerBuyCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <DockPanel HorizontalAlignment="Left">
@@ -84,6 +97,16 @@
                         </Button>
                         <Label Name="CustomerPhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
                     </DockPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="CustomerEmailValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                 </StackPanel>
             </Grid>
         </DockPanel>
@@ -118,7 +141,7 @@
                 </StackPanel>
             </Grid>
         </DockPanel>
-        <Button Grid.Row="2" Height="50" Margin="10" FontWeight="ExtraBlack" FontSize="16" MaxWidth="100" Click="Button_Click">Save</Button>
+        <Button Grid.Row="2" Height="50" Margin="10" FontWeight="ExtraBlack" FontSize="16" MaxWidth="100" Click="Save_Button_Click">Save</Button>
         
     </Grid>
 </Window>

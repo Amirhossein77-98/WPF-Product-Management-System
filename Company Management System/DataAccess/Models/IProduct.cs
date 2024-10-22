@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccess.Models
+﻿namespace DataAccess.Models
 {
+    public enum categories
+    {
+        Electronics,
+        Accessories,
+        HomeSupply,
+        Beauty,
+        Health
+    }
+
     public interface IProduct
     {
-        enum categories
-        {
-            Electronics,
-            Accessories,
-            HomeSupply,
-            Beauty,
-            Health
-        }
         int Id { get; set; }
         string Name { get; set; }
         string Description { get; set; }
@@ -23,8 +18,5 @@ namespace DataAccess.Models
         int Count { get; set; }
         string PicAddress { get; set; }
         double Price { get; set; }
-
-        public string GetProductInfo();
-        string Picture();
     }
 }

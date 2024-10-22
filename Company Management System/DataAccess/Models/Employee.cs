@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Intrinsics.Arm;
+using System.Runtime.Intrinsics.X86;
 
 namespace DataAccess.Models
 {
@@ -23,24 +19,24 @@ namespace DataAccess.Models
         public double Salary { get; set; }
         public string PicAddress { get; set; }
 
-
-        public string GetInfo()
+        public static string GetEmployeeDetailString(string FirstName, 
+            string LastName, 
+            int Age, 
+            string Email, 
+            decimal PhoneNumber, 
+            string Address, 
+            string Department, 
+            string Salary)
         {
+            string EmployeeDetails = $"{FirstName} {LastName}" +
+                    $"\nAge: {Age}" +
+                    $"\nEmail: {Email}" +
+                    $"\nPhone Number: {PhoneNumber}" +
+                    $"\nAddress: {Address}" +
+                    $"\nDepartment: {Department}" +
+                    $"\nSalary: ${Salary}";
             
-            string PersonInfo = $"{FirstName} {LastName}" +
-                $"\nAge: {Age}" +
-                $"\nPhone Num: {PhoneNumber}" +
-                $"\nEmail: {Email}" +
-                $"\nAddress: {Address}" +
-                $"\nDepartment: {Department}" +
-                $"\nSalary: {Salary}";
-
-            return PersonInfo;
-        }
-
-        public string Picture()
-        {
-            return PicAddress;
+            return EmployeeDetails;
         }
     }
 

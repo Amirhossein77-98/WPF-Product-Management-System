@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models
 {
@@ -21,20 +16,16 @@ namespace DataAccess.Models
         public int BuyCount { get; set; }
         public string PicAddress { get; set; }
 
-        public string GetInfo()
+        public static string GetEmployeeDetailString(string FirstName, string LastName, int Age, int BuyCount, string Email, decimal PhoneNumber, string Address)
         {
-            string PersonInfo = $"{FirstName} {LastName}" +
-                $"\nAge: {Age}" +
-                $"\nPhone Num: {PhoneNumber}" +
-                $"\nEmail: {Email}" +
-                $"\nAddress: {Address}" +
-                $"\nBuy Count: {BuyCount}";
+            string EmployeeDetails = $"{FirstName} {LastName}" +
+                    $"\nAge: {Age}" +
+                    $"\nBuy Count: {BuyCount}" +
+                    $"\nPhone Number: {PhoneNumber}" +
+                    $"\nEmail: {Email}" +
+                    $"\nAddress: {Address}";
 
-            return PersonInfo;
-        }
-        public string Picture()
-        {
-            return PicAddress;
+            return EmployeeDetails;
         }
     }
 }
