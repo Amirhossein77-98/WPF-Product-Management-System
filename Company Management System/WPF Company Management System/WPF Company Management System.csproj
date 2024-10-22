@@ -10,8 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\NoImage.jpg" />
     <None Remove="Resources\PlaceholderImage.jpg" />
+    <None Remove="Resources\ProductNone.jpg" />
     <None Remove="Resources\s25.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\NoImage.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ProductNone.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +44,9 @@
   <ItemGroup>
     <Resource Include="Resources\Banner.png" />
     <Resource Include="Resources\Logo.png" />
-    <Resource Include="Resources\PlaceholderImage.jpg" />
+    <Content Include="Resources\PlaceholderImage.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

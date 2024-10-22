@@ -1,0 +1,24 @@
+C:\Users\Amirh\Desktop\Management System\Resources\NoImage.jpg
+C:\Users\Amirh\Desktop\Management System\Resources\ProductNone.jpg
+C:\Users\Amirh\Desktop\Management System\Resources\PlaceholderImage.jpg
+C:\Users\Amirh\Desktop\Management System\WPF Company Management System.exe
+C:\Users\Amirh\Desktop\Management System\WPF Company Management System.dll
+C:\Users\Amirh\Desktop\Management System\WPF Company Management System.runtimeconfig.json
+C:\Users\Amirh\Desktop\Management System\WPF Company Management System.pdb
+C:\Users\Amirh\Desktop\Management System\Microsoft.EntityFrameworkCore.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Logging.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Options.dll
+C:\Users\Amirh\Desktop\Management System\Microsoft.Extensions.Primitives.dll
+C:\Users\Amirh\Desktop\Management System\MySqlConnector.dll
+C:\Users\Amirh\Desktop\Management System\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Amirh\Desktop\Management System\DataAccess.dll
+C:\Users\Amirh\Desktop\Management System\DataAccess.pdb
+C:\Users\Amirh\Desktop\Management System\WPF Company Management System.deps.json

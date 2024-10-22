@@ -106,3 +106,7 @@ G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company 
 G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Debug\net8.0-windows\WPF Company Management System.csproj.AssemblyReference.cache
 G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Debug\net8.0-windows\AddEditWindow.g.cs
 G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Debug\net8.0-windows\AddEditWindow.baml
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Debug\net8.0-windows\WPF Company Management System_Content.g.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Debug\net8.0-windows\Resources\NoImage.jpg
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Debug\net8.0-windows\Resources\ProductNone.jpg
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Debug\net8.0-windows\Resources\PlaceholderImage.jpg

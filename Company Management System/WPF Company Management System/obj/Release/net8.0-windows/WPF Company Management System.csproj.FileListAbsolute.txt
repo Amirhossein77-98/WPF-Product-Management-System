@@ -1,0 +1,112 @@
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\WPF Company Management System.exe
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\WPF Company Management System.deps.json
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\WPF Company Management System.runtimeconfig.json
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\WPF Company Management System.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\WPF Company Management System.pdb
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Humanizer.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.CodeAnalysis.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Logging.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Options.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Microsoft.Extensions.Primitives.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Mono.TextTemplating.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\MySqlConnector.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.Composition.AttributedModel.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.Composition.Convention.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.Composition.Hosting.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.Composition.Runtime.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.Composition.TypedParts.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\System.IO.Pipelines.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\DataAccess.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\DataAccess.pdb
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.csproj.AssemblyReference.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\AddEditWindow.g.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\MainWindow.g.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\App.g.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System_MarkupCompile.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System_MarkupCompile.lref
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\AddEditWindow.baml
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\MainWindow.baml
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.g.resources
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.GeneratedMSBuildEditorConfig.editorconfig
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.AssemblyInfoInputs.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.AssemblyInfo.cs
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.csproj.CoreCompileInputs.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.sourcelink.json
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Comp.B1D1DDBC.Up2Date
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\refint\WPF Company Management System.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.pdb
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System.genruntimeconfig.cache
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\ref\WPF Company Management System.dll
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Resources\NoImage.jpg
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Resources\ProductNone.jpg
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\bin\Release\net8.0-windows\Resources\PlaceholderImage.jpg
+G:\Codes\C#\WPF Company Management System\Company Management System\WPF Company Management System\obj\Release\net8.0-windows\WPF Company Management System_Content.g.cs

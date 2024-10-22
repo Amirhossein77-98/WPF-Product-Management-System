@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using DataAccess;
 using DataAccess.Models;
 using System.Windows.Media.Imaging;
+using System.Windows;
+using System.IO;
 
 namespace WPF_Company_Management_System.Models
 {
@@ -66,26 +68,36 @@ namespace WPF_Company_Management_System.Models
 
         internal static BitmapImage FetchImage(string source, string ImageCategory)
         {
-            BitmapImage bitmap = new BitmapImage();
-            bitmap.BeginInit();
-
-            if (ImageCategory == "Product")
+            try 
             {
-                bitmap.UriSource = new Uri(source == "" ? "./Resources/ProductNone.jpg" : source, UriKind.RelativeOrAbsolute);
-            }
-            else if (ImageCategory == "Employee")
-            {
-                bitmap.UriSource = new Uri(source == "" ? "./Resources/NoImage.jpg" : source, UriKind.RelativeOrAbsolute);
-            }
-            else if (ImageCategory == "Customer")
-            {
-                bitmap.UriSource = new Uri(source == "" ? "./Resources/NoImage.jpg" : source, UriKind.RelativeOrAbsolute);
-            }
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
 
-            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-            bitmap.EndInit();
+                if (ImageCategory == "Product")
+                {
+                    bitmap.UriSource = new Uri(source, UriKind.RelativeOrAbsolute);
+                }
+                else if (ImageCategory == "Employee")
+                {
+                    bitmap.UriSource = new Uri(source, UriKind.RelativeOrAbsolute);
+                }
+                else if (ImageCategory == "Customer")
+                {
+                    bitmap.UriSource = new Uri(source, UriKind.RelativeOrAbsolute);
+                }
+                //MessageBox.Show($"{bitmap}");
+            
+                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                bitmap.EndInit();
 
-            return bitmap;
+
+                return bitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}");
+                return null;
+            }
         }
     }
 }
