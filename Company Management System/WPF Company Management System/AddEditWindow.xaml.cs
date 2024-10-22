@@ -46,6 +46,11 @@ namespace WPF_Company_Management_System
         private string PhotoFileName;
         private categories[] categories = (categories[])Enum.GetValues(typeof(categories));
         private Department[] departments = (Department[])Enum.GetValues(typeof(Department));
+        private bool isPhoneNumberValid = false;
+        private bool isEmailValid = false;
+        private bool isSalaryValid = false;
+        private bool isPriceValid = false;
+        private bool isCountValid = false;
 
         public AddEditWindow(string panel, AppDBContext _context, Product product = null, Employee employee = null, Customer customer = null)
         {
@@ -179,11 +184,23 @@ namespace WPF_Company_Management_System
             // Add Operations
             if (_operation == operations.AddProduct)
             {
+
                 string ProductName = ProductNameTextBox.Text;
                 string ProductDescription = ProductDescriptionTextBox.Text;
                 string ProductCategory = ProductCategoryComboBox.Text;
-                int ProductCount = Convert.ToInt32(ProductCountTextBox.Text);
-                double ProductPrice = Convert.ToDouble(ProductPriceTextBox.Text);
+                int? ProductCount = ProductCountTextBox.Text.Length > 0 ? Convert.ToInt32(ProductCountTextBox.Text) : null;
+                double? ProductPrice = ProductPriceTextBox.Text.Length > 0 ? Convert.ToDouble(ProductPriceTextBox.Text) :null;
+
+                if (isCountValid)
+                {
+                    MessageBox.Show("Please enter a valid count!");
+                    return;
+                }
+                if (isPriceValid)
+                {
+                    MessageBox.Show("Please enter a valid price!");
+                    return;
+                }
 
                 if (string.IsNullOrEmpty(ProductName) || string.IsNullOrEmpty(ProductDescription)
                     || string.IsNullOrEmpty(ProductCategory) || string.IsNullOrEmpty(ProductCount.ToString())
@@ -198,9 +215,9 @@ namespace WPF_Company_Management_System
                         Name = ProductName,
                         Description = ProductDescription,
                         Category = ProductCategory,
-                        Count = ProductCount,
+                        Count = (int)ProductCount,
                         PicAddress = PhotoFileName == null ? "" : $".\\Resources\\ProductsImages\\{PhotoFileName}",
-                        Price = ProductPrice
+                        Price = (int)ProductPrice
                     };
 
                     _passedContext.Products.Add(NewProduct);
@@ -214,15 +231,31 @@ namespace WPF_Company_Management_System
             {
                 string EmployeeFirstName = EmployeeFirstNameTextBox.Text;
                 string EmployeeLastName = EmployeeLastNameTextBox.Text;
-                double EmployeeSalary = Convert.ToDouble(EmployeeSalaryTextBox.Text);
-                int EmployeeAge = Convert.ToInt32(EmployeeAgeTextBox.Text);
-                decimal EmployeePhoneNumber = Convert.ToDecimal(EmployeePhoneNumberTextBox.Text);
+                double? EmployeeSalary = EmployeeSalaryTextBox.Text.Length > 0 ? Convert.ToDouble(EmployeeSalaryTextBox.Text) : null;
+                int? EmployeeAge = EmployeeAgeTextBox.Text.Length > 0 ? Convert.ToInt32(EmployeeAgeTextBox.Text) : null;
+                decimal? EmployeePhoneNumber = EmployeePhoneNumberTextBox.Text.Length > 0 ? Convert.ToDecimal(EmployeePhoneNumberTextBox.Text) : null;
                 string EmployeeEmail = EmployeeEmailTextBox.Text;
                 string EmployeeAddress = EmployeeAddressTextBox.Text;
                 Department DepartmentEnumValue;
                 Enum.TryParse(EmployeeDepartmentComboBox.Text, out DepartmentEnumValue);
                 Department EmployeeDepartment = DepartmentEnumValue;
                 string EmployeePicAddress = PhotoFileName == null ? "" : $".\\Resources\\EmployeesImages\\{PhotoFileName}";
+
+                if (!isSalaryValid)
+                {
+                    MessageBox.Show("Please enter a valid salary!");
+                    return;
+                }
+                if (!isPhoneNumberValid)
+                {
+                    MessageBox.Show("Please enter a valid phone number!");
+                    return;
+                }
+                if (!isEmailValid)
+                {
+                    MessageBox.Show("Please enter a valid email!");
+                    return;
+                }
 
                 if (string.IsNullOrEmpty(EmployeeFirstName) || string.IsNullOrEmpty(EmployeeLastName)
                     || string.IsNullOrEmpty(EmployeeEmail) || string.IsNullOrEmpty(EmployeeSalary.ToString())
@@ -237,9 +270,9 @@ namespace WPF_Company_Management_System
                     {
                         FirstName = EmployeeFirstName,
                         LastName = EmployeeLastName,
-                        Salary = EmployeeSalary,
-                        Age = EmployeeAge,
-                        PhoneNumber = EmployeePhoneNumber,
+                        Salary = (int)EmployeeSalary,
+                        Age = (int)EmployeeAge,
+                        PhoneNumber = (int)EmployeePhoneNumber,
                         Email = EmployeeEmail,
                         Address = EmployeeAddress,
                         Department = EmployeeDepartment,
@@ -257,11 +290,22 @@ namespace WPF_Company_Management_System
                 string CustomerFirstName = CustomerFirstNameTextBox.Text;
                 string CustomerLastName = CustomerLastNameTextBox.Text;
                 string CustomerAddress = CustomerAddressTextBox.Text;
-                int CustomerAge = Convert.ToInt32(CustomerAgeTextBox.Text);
-                decimal CustomerPhoneNumber = Convert.ToDecimal(CustomerPhoneNumberTextBox.Text);
-                int CustomerBuyCount = Convert.ToInt32(CustomerBuyCountTextBox.Text);
+                int? CustomerAge = CustomerAgeTextBox.Text.Length > 0 ? Convert.ToInt32(CustomerAgeTextBox.Text) : null;
+                decimal? CustomerPhoneNumber = CustomerPhoneNumberTextBox.Text.Length > 0 ? Convert.ToDecimal(CustomerPhoneNumberTextBox.Text) : null;
+                int? CustomerBuyCount = CustomerBuyCountTextBox.Text.Length > 0 ? Convert.ToInt32(CustomerBuyCountTextBox.Text) : null;
                 string CustomerEmail = CustomerEmailTextBox.Text;
                 string CustomerPicAddress = PhotoFileName == null ? "" : $".\\Resources\\CustomersImages\\{PhotoFileName}";
+
+                if (!isPhoneNumberValid)
+                {
+                    MessageBox.Show("Please enter a valid phone number!");
+                    return;
+                }
+                if (!isEmailValid)
+                {
+                    MessageBox.Show("Please enter a valid email!");
+                    return;
+                }
 
                 if (string.IsNullOrEmpty(CustomerFirstName) || string.IsNullOrEmpty(CustomerLastName)
                     || string.IsNullOrEmpty(CustomerAddress) || string.IsNullOrEmpty(CustomerAge.ToString())
@@ -276,11 +320,11 @@ namespace WPF_Company_Management_System
                     {
                         FirstName = CustomerFirstName,
                         LastName = CustomerLastName,
-                        Age = CustomerAge,
-                        PhoneNumber = CustomerPhoneNumber,
+                        Age = (int)CustomerAge,
+                        PhoneNumber = (int)CustomerPhoneNumber,
                         Email = CustomerEmail,
                         Address = CustomerAddress,
-                        BuyCount = CustomerBuyCount,
+                        BuyCount = (int)CustomerBuyCount,
                         PicAddress = CustomerPicAddress
                     };
 
@@ -297,9 +341,20 @@ namespace WPF_Company_Management_System
                 string ProductName = ProductNameTextBox.Text;
                 string ProductDescription = ProductDescriptionTextBox.Text;
                 string ProductCategory = ProductCategoryComboBox.Text;
-                int ProductCount = Convert.ToInt32(ProductCountTextBox.Text);
-                double ProductPrice = Convert.ToDouble(ProductPriceTextBox.Text);
-                
+                int? ProductCount = ProductCountTextBox.Text.Length > 0 ? Convert.ToInt32(ProductCountTextBox.Text) : null;
+                double? ProductPrice = ProductPriceTextBox.Text.Length > 0 ? Convert.ToDouble(ProductPriceTextBox.Text) : null;
+
+                if (isCountValid)
+                {
+                    MessageBox.Show("Please enter a valid count!");
+                    return;
+                }
+                if (isPriceValid)
+                {
+                    MessageBox.Show("Please enter a valid price!");
+                    return;
+                }
+
                 if (string.IsNullOrEmpty(ProductName) || string.IsNullOrEmpty(ProductDescription)
                     || string.IsNullOrEmpty(ProductCategory) || string.IsNullOrEmpty(ProductCount.ToString())
                     || string.IsNullOrEmpty(ProductPrice.ToString()))
@@ -313,9 +368,9 @@ namespace WPF_Company_Management_System
                     product.Name = ProductName;
                     product.Description = ProductDescription;
                     product.Category = ProductCategory;
-                    product.Count = ProductCount;
+                    product.Count = (int)ProductCount;
                     product.PicAddress = PhotoFileName == null ? product.PicAddress : $".\\Resources\\ProductsImages\\{PhotoFileName}" ;
-                    product.Price = ProductPrice;
+                    product.Price = (int)ProductPrice;
 
                     _passedContext.SaveChanges();
                     this.Close();
@@ -327,13 +382,29 @@ namespace WPF_Company_Management_System
                 string EmployeeFirstName = EmployeeFirstNameTextBox.Text;
                 string EmployeeLastName = EmployeeLastNameTextBox.Text;
                 string EmployeeAddress = EmployeeAddressTextBox.Text;
-                int EmployeeAge = Convert.ToInt32(EmployeeAgeTextBox.Text);
+                int? EmployeeAge = EmployeeAgeTextBox.Text.Length > 0 ? Convert.ToInt32(EmployeeAgeTextBox.Text) : null;
                 string EmployeeEmail = EmployeeEmailTextBox.Text;
-                decimal EmployeePhoneNumber = Convert.ToDecimal(EmployeePhoneNumberTextBox.Text);
-                double EmployeeSalary = Convert.ToDouble(EmployeeSalaryTextBox.Text);
+                decimal? EmployeePhoneNumber = EmployeePhoneNumberTextBox.Text.Length > 0 ? Convert.ToDecimal(EmployeePhoneNumberTextBox.Text) : null;
+                double? EmployeeSalary = EmployeeSalaryTextBox.Text.Length > 0 ? Convert.ToDouble(EmployeeSalaryTextBox.Text) : null;
                 Department EmployeeDepartmentValue;
                 Enum.TryParse(EmployeeDepartmentComboBox.Text, out EmployeeDepartmentValue);
                 Department EmployeeDepartment = EmployeeDepartmentValue;
+
+                if (!isSalaryValid)
+                {
+                    MessageBox.Show("Please enter a valid salary!");
+                    return;
+                }
+                if (!isPhoneNumberValid)
+                {
+                    MessageBox.Show("Please enter a valid phone number!");
+                    return;
+                }
+                if (!isEmailValid)
+                {
+                    MessageBox.Show("Please enter a valid email!");
+                    return;
+                }
 
                 if (string.IsNullOrEmpty(EmployeeFirstName) || string.IsNullOrEmpty(EmployeeLastName)
                     || string.IsNullOrEmpty(EmployeeEmail) || string.IsNullOrEmpty(EmployeeSalary.ToString())
@@ -349,9 +420,9 @@ namespace WPF_Company_Management_System
                     employee.LastName = EmployeeLastName;
                     employee.Address = EmployeeAddress;
                     employee.Email = EmployeeEmail;
-                    employee.PhoneNumber = EmployeePhoneNumber;
-                    employee.Salary = EmployeeSalary;
-                    employee.Age = EmployeeAge;
+                    employee.PhoneNumber = (int)EmployeePhoneNumber;
+                    employee.Salary = (int)EmployeeSalary;
+                    employee.Age = (int)EmployeeAge;
                     employee.Department = EmployeeDepartment;
                     employee.PicAddress = PhotoFileName == null ? employee.PicAddress : $".\\Resources\\EmployeesImages\\{PhotoFileName}";
                 
@@ -365,11 +436,22 @@ namespace WPF_Company_Management_System
                 string CustomerFirstName = CustomerFirstNameTextBox.Text;
                 string CustomerLastName = CustomerLastNameTextBox.Text;
                 string CustomerAddress = CustomerAddressTextBox.Text;
-                int CustomerAge = Convert.ToInt32(CustomerAgeTextBox.Text);
-                decimal CustomerPhoneNumber = Convert.ToDecimal(CustomerPhoneNumberTextBox.Text);
-                int CustomerBuyCount = Convert.ToInt32(CustomerBuyCountTextBox.Text);
+                int? CustomerAge = CustomerAgeTextBox.Text.Length > 0 ? Convert.ToInt32(CustomerAgeTextBox.Text) : null;
+                decimal? CustomerPhoneNumber = CustomerPhoneNumberTextBox.Text.Length > 0 ? Convert.ToDecimal(CustomerPhoneNumberTextBox.Text) : null;
+                int? CustomerBuyCount = CustomerBuyCountTextBox.Text.Length > 0 ? Convert.ToInt32(CustomerBuyCountTextBox.Text) : null;
                 string CustomerEmail = CustomerEmailTextBox.Text;
                 string CustomerPicAddress = PhotoFileName == null ? "" : $".\\Resources\\CustomersImages\\{PhotoFileName}";
+
+                if (!isPhoneNumberValid)
+                {
+                    MessageBox.Show("Please enter a valid phone number!");
+                    return;
+                }
+                if (!isEmailValid)
+                {
+                    MessageBox.Show("Please enter a valid email!");
+                    return;
+                }
 
                 if (string.IsNullOrEmpty(CustomerFirstName) || string.IsNullOrEmpty(CustomerLastName)
                     || string.IsNullOrEmpty(CustomerAddress) || string.IsNullOrEmpty(CustomerAge.ToString())
@@ -385,9 +467,9 @@ namespace WPF_Company_Management_System
                     customer.LastName = CustomerLastName;
                     customer.Address = CustomerAddress;
                     customer.Email = CustomerEmail;
-                    customer.PhoneNumber = CustomerPhoneNumber;
-                    customer.BuyCount = CustomerBuyCount;
-                    customer.Age = CustomerAge;
+                    customer.PhoneNumber = (int)CustomerPhoneNumber;
+                    customer.BuyCount = (int)CustomerBuyCount;
+                    customer.Age = (int)CustomerAge;
                     customer.PicAddress = PhotoFileName == null ? customer.PicAddress : $".\\Resources\\CustomersImages\\{PhotoFileName}";
 
                     _passedContext.SaveChanges();
@@ -479,15 +561,27 @@ namespace WPF_Company_Management_System
 
             if (Regex.IsMatch(email, emailPattern))
             {
-                if (EmplyeeDetails.Visibility == Visibility.Visible) {EmployeeEmailTextBox.Foreground = new SolidColorBrush(Colors.Green); };
-                if (CustomerDetails.Visibility == Visibility.Visible) { CustomerEmailTextBox.Foreground = new SolidColorBrush(Colors.Green); };
-                CustomerEmailValidationWarnLabel.Visibility = Visibility.Hidden;
+                if (EmplyeeDetails.Visibility == Visibility.Visible) { 
+                    EmployeeEmailTextBox.Foreground = new SolidColorBrush(Colors.Green); 
+                    EmployeeEmailValidationWarnLabel.Visibility = Visibility.Hidden;
+                };
+                if (CustomerDetails.Visibility == Visibility.Visible) { 
+                    CustomerEmailTextBox.Foreground = new SolidColorBrush(Colors.Green); 
+                    CustomerEmailValidationWarnLabel.Visibility = Visibility.Hidden;
+                };
+                isEmailValid = true;
             }
             else
             {
-                if (EmplyeeDetails.Visibility == Visibility.Visible) { EmployeeEmailTextBox.Foreground = new SolidColorBrush(Colors.Red); };
-                if (CustomerDetails.Visibility == Visibility.Visible) { CustomerEmailTextBox.Foreground = new SolidColorBrush(Colors.Red); };
-                CustomerEmailValidationWarnLabel.Visibility = Visibility.Visible;
+                if (EmplyeeDetails.Visibility == Visibility.Visible) { 
+                    EmployeeEmailTextBox.Foreground = new SolidColorBrush(Colors.Red); 
+                    EmployeeEmailValidationWarnLabel.Visibility = Visibility.Visible;
+                };
+                if (CustomerDetails.Visibility == Visibility.Visible) { 
+                    CustomerEmailTextBox.Foreground = new SolidColorBrush(Colors.Red);
+                    CustomerEmailValidationWarnLabel.Visibility = Visibility.Visible;
+                };
+                isEmailValid = false;
             }
         }
 
@@ -497,11 +591,13 @@ namespace WPF_Company_Management_System
             {
                 EmployeeSalaryTextBox.Foreground = new SolidColorBrush(Colors.Green);
                 SalaryValidationWarnLabel.Visibility = Visibility.Hidden;
+                isSalaryValid = true;
             }
             else
             {
                 EmployeeSalaryTextBox.Foreground = new SolidColorBrush(Colors.Red);
                 SalaryValidationWarnLabel.Visibility = Visibility.Visible;
+                isSalaryValid = false;
             }
         }
 
@@ -514,17 +610,60 @@ namespace WPF_Company_Management_System
 
             if (Regex.IsMatch(phoneNumber, phonePattern))
             {
-                if (EmplyeeDetails.Visibility == Visibility.Visible) { EmployeePhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Green); };
-                if (CustomerDetails.Visibility == Visibility.Visible) { CustomerPhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Green); };
-                PhoneNumberValidationWarnLabel.Visibility = Visibility.Hidden;
+                if (EmplyeeDetails.Visibility == Visibility.Visible) {
+                    EmployeePhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Green); 
+                    EmployeePhoneNumberValidationWarnLabel.Visibility = Visibility.Hidden;
+                };
+                if (CustomerDetails.Visibility == Visibility.Visible) { 
+                    CustomerPhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Green); 
+                    CustomerPhoneNumberValidationWarnLabel.Visibility = Visibility.Hidden;
+                };
+                isPhoneNumberValid = true;
             }
             else
             {
-                if (EmplyeeDetails.Visibility == Visibility.Visible) { EmployeePhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Red); };
-                if (CustomerDetails.Visibility == Visibility.Visible) { CustomerPhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Red); };
-                PhoneNumberValidationWarnLabel.Visibility = Visibility.Visible;
+                if (EmplyeeDetails.Visibility == Visibility.Visible) { 
+                    EmployeePhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Red); 
+                    EmployeePhoneNumberValidationWarnLabel.Visibility = Visibility.Visible;
+                };
+                if (CustomerDetails.Visibility == Visibility.Visible) { 
+                    CustomerPhoneNumberTextBox.Foreground = new SolidColorBrush(Colors.Red); 
+                    CustomerPhoneNumberValidationWarnLabel.Visibility = Visibility.Visible;
+                };
+                isPhoneNumberValid = false;
             }
         }
 
+        private void ProductCountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(ProductCountTextBox.Text, out int count) && count >= 0)
+            {
+                ProductCountTextBox.BorderBrush = new SolidColorBrush(Colors.Gray);
+                ProductCountWarnLabel.Visibility = Visibility.Hidden;
+                isCountValid = true;
+            }
+            else
+            {
+                ProductCountTextBox.BorderBrush = new SolidColorBrush(Colors.Red);
+                ProductCountWarnLabel.Visibility = Visibility.Visible;
+                isCountValid = false;
+            }
+        }
+
+        private void ProductPriceTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (decimal.TryParse(ProductPriceTextBox.Text, out decimal price))
+            {
+                ProductPriceTextBox.BorderBrush = new SolidColorBrush(Colors.Gray);
+                ProductPriceWarnLabel.Visibility= Visibility.Hidden;
+                isPriceValid = true;
+            }
+            else
+            {
+                ProductPriceTextBox.BorderBrush = new SolidColorBrush(Colors.Red);
+                ProductPriceWarnLabel.Visibility = Visibility.Visible;
+                isPriceValid = false;
+            }
+        }
     }
 }

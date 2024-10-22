@@ -55,7 +55,7 @@
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Name="SalaryValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
-                    <Label Name="PhoneNumberValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="EmployeePhoneNumberValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Name="EmployeeEmailValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
@@ -102,7 +102,7 @@
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
-                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="CustomerPhoneNumberValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Name="CustomerEmailValidationWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                     <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
@@ -115,6 +115,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" HorizontalAlignment="Left">
                     <Label Foreground="AliceBlue" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,10" Height="36">ProductName:</Label>
@@ -128,8 +129,8 @@
                     <TextBox VerticalContentAlignment="Center" Name="ProductNameTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <TextBox VerticalContentAlignment="Center" Name="ProductDescriptionTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <ComboBox VerticalContentAlignment="Center" Name="ProductCategoryComboBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></ComboBox>
-                    <TextBox VerticalContentAlignment="Center" Name="ProductCountTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
-                    <TextBox VerticalContentAlignment="Center" Name="ProductPriceTextBox" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductCountTextBox" TextChanged="ProductCountTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
+                    <TextBox VerticalContentAlignment="Center" Name="ProductPriceTextBox" TextChanged="ProductPriceTextBox_TextChanged" Height="35" Background="WhiteSmoke" Margin="0,0,0,10"></TextBox>
                     <DockPanel HorizontalAlignment="Left">
                         <Button Name="ProductPhotoButton" HorizontalAlignment="Left" Click="ProductPhotoButton_Click">
                             <Button.Content>
@@ -138,6 +139,14 @@
                         </Button>
                         <Label Name="ProductPhotoAddressLabel" Foreground="AliceBlue" VerticalAlignment="Center" Visibility="Hidden">Photo Address</Label>
                     </DockPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="ProductCountWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Name="ProductPriceWarnLabel" Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
+                    <Label Foreground="Red" Visibility="Hidden" Margin="0,0,0,10" Height="36">⚠️</Label>
                 </StackPanel>
             </Grid>
         </DockPanel>
