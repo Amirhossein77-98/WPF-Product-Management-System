@@ -2,6 +2,8 @@
 
 A WPF-based Company Management System that allows users to manage products, employees, and customers. The project uses MySQL as the database and Entity Framework Core for data access.
 
+<img src="https://github.com/Amirhossein77-98/WPF-Product-Management-System/blob/main/Screenshots/Screenshot.png" />
+
 ## Features
 
 - **Manage Products:** View, add, update, and delete products.
